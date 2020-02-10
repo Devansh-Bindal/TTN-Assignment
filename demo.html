@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table{
+            border-collapse: collapse; 
+            opacity: 1;
+            box-shadow: 10px 10px 5px #aaaaaa;
+        }
+
+        table:hover{
+            box-shadow: 15px 15px 8px #aaaaaa;
+        }
+
+        td,th{
+            padding: 10px;
+        }
+
+        td{ 
+            height: 30px;
+            text-align: center;
+            z-index: 1;
+        }     
+
+        th{
+            height: 40px;
+            background-color: #6c7ae0;
+            color: white;
+        }
+
+        tr:first-child:hover{
+            background-color: #000a52;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2
+        }
+
+        th:first-child{
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child{
+            border-top-right-radius: 10px;
+        }
+
+        table tr:last-child td:first-child{
+            border-bottom-left-radius: 10px;
+        }
+
+        table tr:last-child td:last-child{
+            border-bottom-right-radius: 10px;
+        }
+        
+        tr:hover{
+            position: relative;
+            background-color: #aaaa;
+        }
+
+        @media screen and (min-width:816px) {
+            table{
+                width: 800px;
+            }
+        }
+
+        @media screen and (min-width: 550px) and (max-width:816px ) {
+            table{
+                width: 550px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="table">
+        <table align="center" style="border-radius: 10px;">
+          <tr>
+              <th>ID</th>
+              <th>Employee Name</th>
+              <th>Designation</th>
+              <th>Department</th>
+          </tr>
+          <tr>
+              <td>4030</td>
+              <td>Devansh</td>
+              <td>MEAN</td>
+              <td>Group 3</td>
+          </tr>
+          <tr>
+            <td>4139</td>
+            <td>Siddhant</td>
+            <td>Big Data</td>
+            <td>Group 4</td>
+        </tr>
+        <tr>
+            <td>4020</td>
+            <td>Bharat</td>
+            <td>Android</td>
+            <td>Group 1</td>
+        </tr>
+        <tr>
+            <td>4122</td>
+            <td>Jay</td>
+            <td>Dev Op's</td>
+            <td>Group 5</td>
+        </tr>
+        <tr>
+            <td>4121</td>
+            <td>Saket</td>
+            <td>IOS</td>
+            <td>Group 4</td>
+        </tr>
+        <tr>
+            <td>4021</td>
+            <td>Bhupesh</td>
+            <td>FEEN</td>
+            <td>Group 3</td>
+        </tr>
+        <tr>
+            <td>4023</td>
+            <td>Vipul</td>
+            <td>FEEN</td>
+            <td>Group 3</td>
+        </tr>
+    
+        </table>
+    </div>
+</body>
+</html>
+
