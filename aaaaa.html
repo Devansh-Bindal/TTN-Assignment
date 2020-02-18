@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+         body
+        {
+            margin:0px;
+        }
+       header img
+      {
+        float:left;
+        width: 100px;
+      }
+      header
+      {
+        padding: 10px;
+        background-color: white;
+        box-shadow:0 5px 3px lightgray;
+        overflow: auto;
+      }
+      header>button
+      {
+          float:right;
+      }
+      aside{
+          z-index:-1;
+          width:20%;
+          position: absolute;
+          padding:10px;
+          left: 0;
+          background-color:white;
+          font-size: 30px;
+      }
+      .main
+      {
+          width:80%;
+          position: absolute;
+          right: 0px;
+          z-index:-1;
+          padding:20px;
+      }
+      .photos
+     {
+        text-align: center;
+        margin-bottom: 20px;
+     }
+      .image
+      {
+          float:left;
+          margin-right: 20px;
+      }
+      .general-content
+      {
+            clear:right;
+            text-align: justify;
+      }
+      .clear{
+          clear:both;
+      }
+      form button{
+          clear:right;
+      }
+      table{
+          width: 100%;
+      }
+
+      @media screen and (max-width:415px){
+           .image img{
+              width:100% 
+           }}
+           @media screen and (max-width:245px){
+           .photos phs{
+               width:100%;
+           }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www.bisinfotech.com/wp-content/uploads/2017/03/TO-THE-NEW-logo.jpg" alt="Logo">
+        <button>Login</button>
+    </header>
+    <section class="container">
+        <aside>
+            <a href="#">Nav1</a><br>
+            <a href="#">Nav2</a><br>
+            <a href="#">Nav3</a><br>
+            <a href="#">Nav4</a>
+            </aside>
+                <section class="main">
+                    <section class="photos">
+                    <img src="https://via.placeholder.com/150/150" alt="image1">
+                     <img src="https://via.placeholder.com/150/150" alt="image2">
+                     <img src="https://via.placeholder.com/150/150" alt="image3">
+                     <img src="https://via.placeholder.com/150/150" alt="image4">
+                     </section>
+                     <section class="partition">
+                     <article class="image">
+                        <img src= "https://via.placeholder.com/300/300">
+                     </article>
+                     <article class="general-content">
+                            <h3><u>Regular Content</u></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium delectus molestias doloremque nihil nemo. Accusantium quasi pariatur tempora qui temporibus saepe ex illo voluptatem? Consequuntur accusantium optio beatae obcaecati quaerat cumque soluta, quibusdam vel ex architecto dolorem tenetur possimus consequatur nam, deleniti, distinctio veniam magnam quis doloremque illo exercitationem iusto!</p>
+                     </article>
+                     <article class="general-content">
+                            <h3><u>Regular Content</u></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium delectus molestias doloremque nihil nemo. Accusantium quasi pariatur tempora qui temporibus saepe ex illo voluptatem? Consequuntur accusantium optio beatae obcaecati quaerat cumque soluta, quibusdam vel ex architecto dolorem tenetur possimus consequatur nam, deleniti, distinctio veniam magnam quis doloremque illo exercitationem iusto!</p>
+                     </article> 
+                     </section>
+                     <br>
+                     <hr>
+                     <section class="form">
+                         <form >
+                             <label for="">Name</label>
+                             <input type="text">
+                             <label for="">Email</label>
+                             <input type="text">
+                             <button>Submit</button>
+                            </form>
+                     </section>
+                     <section>
+                        <h2>USER</h2>
+                        <table border="1">
+   
+                           <thead>
+                               <tr>
+                                   <th colspan="2">Name</th>
+                               
+                                   <th rowspan="2">Training_ID</th>
+                               </tr> 
+                               <tr>
+                                   <th>First</th>
+                                   <th>Last</th>
+                               </tr>
+                           </thead>
+   
+                           <tbody>
+                               
+                               <tr>
+                                   <td>Devansh</td>
+                                   <td>Bindal</td>
+                                   <td>4030</td>
+                               </tr>
+                               <tr>
+                                   <td>Jay</td>
+                                   <td>Patel</td>
+                                   <td>4040</td>
+                               </tr>
+                           </tbody>
+   
+                           <tfoot>
+                               <tr>
+                                   <td>Bhupesh</td>
+                                   <td>Chikara</td>
+                                   <td>4050</td>
+                               </tr>
+                               </tfoot>
+   
+                       </table>
+                        </table>
+                    <br>
+                        </section>
+
+                    
+                </section>
+    </section>
+        
+</body>
+</html>
