@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* class selector-select element based on class name */
+        .container
+        {
+        max-width:960px;
+        width:100%;
+        margin: 30px auto;
+        }
+        /* element selector-all <h2> elements */
+        h2{
+             padding:10px;
+            margin-top: 5px;;
+         }
+        .box-6
+        {
+            clear:both;
+        }
+        .box-1
+        {   
+                font-size: 15px;
+                font-weight: 800;
+                font-family: Arial, Helvetica, sans-serif;
+                font-style: italic;
+                
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7dVqm8T6AmtJ-eAQszPOzThw2VU16eyV86_0BSmz3PzAmw_GV');
+                background-size:100px 50px;
+                background-repeat: repeat-x; 
+                
+                margin-bottom:10px ;
+                padding:5px;
+                border: 2px solid green;
+                text-align: justify;
+                }
+                .box-2
+                {
+                    padding:5px;
+                    margin-bottom: 10px;
+                    background: honeydew;
+                    border:2px solid;
+                    float:left;
+                    width:70%;
+                    text-align: center;
+                    text-align: justify;
+                }
+                .box-3
+                {
+                    padding:5px;
+                    margin-bottom: 10px;
+                    background: honeydew;
+                    border:2px solid;
+                    float:right;
+                    width:25%;
+                    text-align: justify;
+                }
+                .box-4
+                {
+                    padding:5px;
+                    margin-bottom: 10px;
+                    background: honeydew;
+                    border:2px solid;
+                    float: left;
+                    width:60%;
+                    clear:both;
+                    text-align: justify;
+    
+                }.box-5
+                {
+                    padding:5px;
+                    margin-bottom: 10px;
+                    background: honeydew;
+                    border:2px solid;
+                    float:right;
+                    width:35%;
+                    text-align: justify;
+                }
+            
+            .box-6
+                {
+                    padding:5px;
+                    margin-bottom: 10px;
+                    background: honeydew;
+                    border:2px solid;
+                    text-align: justify;
+                   
+                }
+               .image
+               {
+                   padding:10px;
+                   width:250px;
+                   height:100px;
+               }
+               .image1
+               {   
+                   padding-left: 10px;
+                   width:250px;
+                   height:100px;
+               }
+               .box-2 >p:before
+               {
+                    content:'Read Content-';
+                    margin-right: 10px;
+               }
+               .box-3>p::after
+               {
+                    content:"Thank You";
+                    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4ArIw6jTkaX5aWC9zKFU3mysNxCa98c0yjQOwX5YP9WzdJihy");
+                    margin-left: 10px;
+               }
+               /* Selectors */
+               ul.list {
+                   list-style-type: none;
+                   }
+                   a:hover{
+                       background-color: limegreen;
+                   }
+                   a:focus{
+                       background-color: red;
+                   }
+                   ul.list>li:first-child
+                   {
+                       font-style: italic;
+                       width:50px;
+                       background-color:lightgrey;
+                       margin-bottom: 5px;
+                   }
+                   ul.list>li:nth-child(2)
+                   {
+                       font-style: italic;
+                       width:50px;
+                       background-color:lightslategray;
+                       margin-bottom: 5px;
+                   }
+                   ul.list>li:nth-child(3)
+                   {
+                       font-style: italic;
+                       width:50px;
+                       background-color:lightgreen;
+                       margin-bottom: 5px;
+                   }
+                   ul.list>li:nth-child(4)
+                   {
+                       font-style: italic;
+                       width:50px;
+                       background-color:lightyellow;
+                    } 
+                    /* Combinators-Explains relationship between objects */
+                    /* Descendant -The descendant selector matches all elements that are descendants of a specified element*/
+                   /*.box-4 p
+                   {
+                       background-color: lightsteelblue;
+                   }*/
+                   /* child - selects all elements that are the children of a specified element*/
+                   /*.box-6>p
+                   {
+                       background-color:lightsalmon;
+                   }*/
+                   /* adjacent sibling- selects all elements that are the adjacent siblings of a specified element */
+                   /*.box-6+p
+                   {
+                       background-color: lightpink;
+                   }*/
+                   /* general sibling-selects all elements that are siblings of a specified element */
+                   /*.box-6~ p
+                   {
+                       background-color: rgb(91, 96, 102);
+                   }*/
+                   /* Attribute selector */
+                   /* Search all elements with name "target"*/
+                   /*a[target]
+                   {
+                       background-color:yellow;
+                   }*/
+                     /* Selects all elements with name "target="_blank"" */
+                  /* a[target="_blank"]
+                   {
+                       background-color:yellow;
+                   }
+                   /* Selects all classes whose name start with "box" */
+                   /*[class^=box]
+                   {
+                       background-color: red;
+                   }*/
+                   /* /* Selects all classes whose name ends with "box -2" */
+                   /*[class$="-2"]
+                   {
+                       background-color: red;
+                   }*/
+
+        </style>
+</head>
+</div>
+<body>
+    <div class="container">
+    <div class="box-1">
+        <h2>Heading</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In assumenda deserunt velit voluptatibus alias blanditiis esse, recusandae sed voluptas dolor!</p>
+    </div>
+
+
+    <div class="box-2">
+        <h2>Heading</h2>
+        <span style=" display:inline-block;">
+        <img class="image" src="/home/devansh/Desktop/abc.jpg"></span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In assumenda deserunt velit voluptatibus alias blanditiis esse, recusandae sed voluptas dolor!</p>
+    </div>
+
+
+    <div class="box-3">
+        <h2>Heading</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In assumenda deserunt velit voluptatibus alias blanditiis esse, recusandae sed voluptas dolor!</p>
+    </div>
+
+
+    <div class="box-4">
+        <h2>Heading</h2>
+        <span style=" display:inline-block;">
+            <img class="image1" src="/home/devansh/Desktop/abc.jpg"></span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In assumenda deserunt velit voluptatibus alias blanditiis esse, recusandae sed voluptas dolor!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, error?</p>
+        <section><p>HFGGHC</p></section>
+    </div>
+
+    
+    <div class="box-5">
+        <h2><u>Heading</u></h2>
+        <ul class="list">
+            <li><a href="#" target="_blank">Link1</a></li>
+            <li><a href="#"target="_blank">Link2</a></li>
+            <li><a href="#"target="_blank">Link3</a></li>
+            <li><a href="#"target="_blank">Link4</a></li>
+        </ul>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In assumenda deserunt velit voluptatibus alias blanditiis esse, recusandae sed voluptas dolor!</p>
+    </div>
+    <div class="box-6">
+        <h2>Heading</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In assumenda deserunt velit voluptatibus alias blanditiis esse, recusandae sed voluptas dolor!</p>
+        <section><p>Lorem ipsum dolor sit amet consectetur.</p></section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum!</p>
+
+  </div>  
+</body>
+</html>
