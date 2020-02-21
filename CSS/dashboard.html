@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            margin:0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .aside
+        {
+            position: absolute;
+            left:0;
+            width:17%;
+            background-color: rgb(47,64,80);
+            padding:10px;
+            z-index:1;
+            height:100%;
+        }
+        .img
+        {
+            position: absolute;
+            top:35px;
+            left:28px;
+            border-radius: 50%;
+            height:8%;
+            width:25%;
+            padding:2px;
+        }
+        .img1
+        {
+            margin-top: 30px;
+            height:42%;
+            width:56%;
+            margin-bottom: 10px;
+        }
+        .img2
+        {
+            height:85%;
+            width:22%;
+            border-radius:50%;
+            margin-left: 10px;
+            margin-top:2px;
+            margin-right: 2px;
+            float:left;
+        }
+        .img3
+        {
+            height:145%;
+            width:22%;
+            border-radius:50%;
+            margin-left: 10px;
+            margin-top:2px;
+            margin-right: 2px;
+            float:left;
+        }
+        .profile-img p
+         {
+            font-size: 13px;
+            font-weight: 700;
+            color:rgb(103, 106, 108);
+             padding-top: 10px;
+        }
+        .form.bt
+        {
+            color:rgb(103, 106, 108);
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .btn
+        {
+            border:lightslategray;
+            border-radius: 2px;
+            color:rgb(103, 106, 108);
+            background-color: white;
+            font-size: 13px;
+            cursor:pointer;
+            padding: 2px;
+            border :1px solid lightgray;
+            margin-right: -5px;
+        }
+        .btn:first-child{
+            border-top-left-radius:2px ;
+            border-bottom-left-radius: 2px;
+        }
+        .btn:last-child{
+            border-bottom-right-radius:2px ;
+            border-top-right-radius: 2px;
+        }
+        .profile-info h3{
+            margin-bottom: 0;
+        }
+        .name
+        {
+            position:absolute;
+            top:70px;
+            left:28px;
+            font-size:13px;
+            text-align: left;
+            color:#DCDCDC;
+        }
+        .abcc
+        {
+            position:absolute;
+            top:120px;
+            left:20px; 
+            padding-top: 10px;    
+            padding-left: 15px;  
+        }
+        .abcc li
+        {
+            list-style: none;
+            font-size: 13px;
+            line-height: 2.6em;
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 11px;
+
+        }
+        .abcc li a
+        {
+            text-decoration: none;
+            color:#a7b1c2;
+            font-weight: 600;
+        }
+        
+        .abcc li a:hover
+        {
+ 
+            color:wheat;
+            cursor: pointer;
+        }
+        .aass
+        {
+            padding:0;
+            margin:0;
+        }
+        .aass li 
+        {
+            list-style: none;
+            font-size: 13px;
+            line-height: 2.6em;
+            text-align: left;
+            font-weight: 600;
+        }
+        .aass li a
+        {
+            text-decoration: none;
+            color:#676A6C;;
+            font-weight: 600;
+            font-size: 13px;
+            font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; ;
+            background-color: ;
+        }
+        .main
+        {
+            position:absolute;
+            right:0;
+            width:83%;
+            height: 100%;
+            background-color:#f3f3f4;
+        }
+        .nav
+        {
+            padding:10px;
+            background-color:#f3f3f4 ;
+            overflow: auto;
+        }
+        .menu-icon
+        {
+            padding-top: 5px;
+            width:10px;
+        }
+        .menu-icon > .line 
+        {
+             display: block;  
+             width:20px;
+             background-color: #292929;
+             height: 2px;
+             margin-top: 10px;
+        }
+        .menu-icon > .line + .line 
+        {
+            margin-top: 6px;
+        }
+        .form
+        {
+            
+        }
+        .form input{
+            border: none;
+            padding:12px;
+            color:rgb(103, 106, 108);
+            background-color:rgba(0, 0, 0, 0);
+            width: 60%;
+        }
+        .section
+        {
+            background-color: white;
+            padding:30px;
+            height:17%;
+        }
+        .heading
+        {
+            display:inline;
+            color:rgb(103, 106, 108);
+            font-size: 24px;   
+            padding:5px;
+        }
+        .heading-part1
+        {
+            color:rgb(103, 106, 108);
+            font-size:13px;
+            padding-top: 10px;
+            padding-left: 5px;
+            float:left;
+        }
+       
+        .heading-part2
+        {
+            color:rgb(103, 106, 108);
+            font-size:13px;
+            font-weight: 700;
+            padding-left:15px;
+            padding-top: 10px;
+            float:left;
+        }
+        
+        .profile
+        {
+            width:65%;
+            height:50%;
+            float:left;
+            margin-left:20px;
+            margin-top: 20px;
+            background-color:white;
+        }
+        .profile-img
+        {   float:left;
+            width:40%;
+            height: 100%;
+            text-align: center;
+        }
+        .profile-info
+        {   
+            float:left;
+            width:60%;
+            height:100%;
+        }
+        .profile-info h3
+        {
+            margin-top:20px; 
+            color:rgb(103, 106, 108); 
+            font-weight: 700; 
+        }
+        .profile-info h5
+        {
+            margin:2px;
+            color:rgb(103, 106, 108);
+        }
+        .bars{
+            float: left;
+            border: none;
+            background-color:#1AB394;
+            color:white;
+            padding: 12px;
+            border-radius: 3px;
+        }
+        .logout{
+            float: right;
+            border: none;
+            background-color: #f3f3f4;
+            padding: 12px;
+        }
+        .stakeholders
+        {
+            
+            width:30%;
+            height:50%;
+            float:right;
+            margin-top:20px;
+            margin-right: 15px;
+            background-color: white;
+        }
+        .stakeholders1
+        {
+            position: relative;
+            width:100%;
+            height:15%;
+            color:lightslategray;
+            border-bottom: 1px solid lightgrey;
+            
+        }
+        .stakeholders1 h3
+        {
+            position: absolute;
+            left:5px;
+            top:10px;
+            margin-top:5px;
+            margin-left: 10px;
+            font-size: 14px;
+            color:rgb(103, 106, 108);
+            font-weight: 600;
+            line-height: 15.4px;
+            font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        }
+        .stakeholders2
+        {
+            width:100%;
+            height:30%;
+            color:lightslategray;
+            border-bottom: 1px solid lightgrey;
+            padding:5px;
+        }
+        .stakeholders-2-text h4
+        {
+            
+            margin-top:5px;
+            margin-bottom: 5px;
+            cursor:pointer;
+            color:#337AB7;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+        }
+        .stakeholders-2-text h4:hover
+        {
+            color:rgb(82, 74, 131);
+        }
+        .stakeholders-2-text p
+        {
+            margin-top:0px;
+            margin-bottom: 10px;
+            font-size:12px;
+            font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+            line-height: 15px;
+            color:#676A6C;
+        }
+        .stakeholders3
+        {
+            width:100%;
+            height:50%;
+        }
+        .stakeholders-3-text h4
+        {
+            margin-top:5px;
+            margin-bottom: 5px;
+            cursor:pointer;
+            color:#337AB7;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+        }
+        .stakeholders-3-text h4:hover
+        {
+            color:rgb(82, 74, 131);
+        }
+        .stakeholders-3-text p
+        {
+            margin-top:0px;
+            margin-bottom: 10px;
+            font-size:12px;
+            font-family: Arial, Helvetica, sans-serif;
+            color:#676A6C;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="aside">
+           <span> <img class="img" src="/home/devansh/Pictures/imm.png"></span>
+           <div class="name">
+               <h4>Devansh Bindal</h4>
+           </div>
+           <ul class="abcc">
+                <li><a href="#">My Dashboard</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">My Tickets</a></li>
+                <li><a href="#">Newers Actions</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Important Links</a></li>
+                <li><a href="#">Org Chart</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <div class="form">
+                    <button class="bars"><i class="fa fa-bars"></i></button>
+                    <input type="text" placeholder="Search element By Email Or First Name" id="form" name="name" size="100">
+                    <button class="bt logout"><i class="fa fa-sign-out"></i> Logout</button>
+                </div>
+                
+            </div>
+            <div class="section">
+                <span class="heading">Dashboard</span> <br>
+                <span class="heading-part1">Home </span>
+                <span class="heading-part2">/ &nbsp; &nbsp;&nbsp;Dashboard</span>
+            </div>
+            <div class="profile">
+                <div class="profile-img">
+                    <span> <img class="img1" src="/home/devansh/Pictures/imm.png"></span> <br>
+                    <a class="btn"><i class="fa fa-phone"> </i>Call</a> 
+                    <a class="btn"><i class="fa fa-envelope"> </i>Email</a><br>
+                    <p>Profile Completion Status<br>-82% Complete</p>
+                 </div>
+                <div class="profile-info"><h3>Devansh Bindal</h3><h5>Trainee</h5><br>
+                    <ul class="aass">
+                        <li><a href="#"><i class="fa fa-gavel "></i> To The New Private Limited</a></li>
+                        <li><a href="#"><i class="fa fa-building"></i> Beach</a></li>
+                        <li><a href="#"><i class="fa fa-globe"></i> MEAN</a></li>
+                        <li><a href="#"><i class="fa fa-id-card-o"></i> 4030</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stakeholders">
+                <div class="stakeholders1">
+                    <h3>My Stakeholders</h3>
+                </div>
+                <div class="stakeholders2">
+                    <span><img class="img2" src="/home/devansh/Pictures/ims.png"></span>
+                    <div class="stakeholders-2-text"><h4>Rachit Jain</h4><p>Associate Technical Lead</p><p>Mentor and Reporting Manager</p><br>
+                </div>
+                <div class="stakeholders3">
+                    <span><img class="img3" src="/home/devansh/Pictures/imq.png"></span>
+                    <div class="stakeholders-3-text"><h4>Shakshi Agarwal</h4><p>Assistant Manager - Human Resources</p><p>HR SPOC</p><br>
+                </div>
+            </div>
+        
+        </div>
+    
+</body>
+</html>
