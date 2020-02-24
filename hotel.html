@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body,html
+        {
+            margin:0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header
+        {
+          height:200px;
+         
+        }
+        .main
+        {
+          position: relative;
+          height: 433px;
+        }
+        .nav
+        {
+            height: 20%;
+            background-color: #F5F5F5;
+        }
+        .navblank
+        {
+            width:10%;
+            height: 100%;
+        }
+        .nav-info
+        {
+            width: 70%;
+            float: left;
+            height: 100%;
+            list-style: none;
+            margin: 0 ;
+            padding:0 1%;
+        }
+        .nav-info li
+        {
+            float:left;
+        }
+        .nav-info li a
+        {
+            display: block;
+            font-size: 12px;
+            text-decoration: none;
+            color:lightslategray;
+            padding:13px 4px;
+            cursor:pointer;
+        }
+        .nav-info li:first-child
+        {
+            margin-left: 15%;
+        }
+        .nav-tags
+        {
+            width: 20%;
+            height:100%;
+            list-style:none;
+            margin:0 ;
+            float:left;
+        }
+        .nav-tags li
+        {
+            float:right;
+        }
+        .nav-tags li a 
+        {
+            display: block;
+            width:25px;
+            color:rgb(148, 207, 58);
+            padding:10px 0;
+            cursor:pointer;
+        }
+        .nav-tags li a :first-child
+        {
+            padding-right:100px;
+        }
+        .header-content
+        {
+            height: 50%;
+            background-color: white
+        } 
+        .logo
+        {
+            display:block;
+            width:25%;
+            float:left;
+        }
+        .span-logo
+        {
+            margin-left:42%;
+            margin-top: 8%;
+            float:left;
+            color:rgb(148, 207, 58);
+        }
+        .logo h3
+        {
+            float:right;
+            color:rgb(148, 207, 58);   
+            /* padding:0 0; */
+            /* margin-bottom: 0; */
+            margin-top: 10%;
+        }
+        .logo p
+        {
+            float:right;
+            color:lightslategray;
+            font-size: 11px;
+            font-weight: 600;
+            /* margin-top:0%; */
+            /* margin-left: 20px; */
+            margin-top: 0%;
+            margin-left: 10%;
+            margin-right: 0%;
+        }
+        .phone
+        {
+            display:block;
+            width:25%;
+            float:left;
+        }
+        .span-phone
+        {
+            color:rgb(148, 207, 58);
+            margin-left:42%;
+            margin-top: 12%;
+            float:left;
+        }
+        .phone p
+        {
+            color:lightslategray;
+            font-weight: 700;
+            float:right;
+            margin-top: 12%;
+        }
+        .maps
+        {
+            display:block;
+            width:25%;
+            float:left;
+        }
+        .span-maps
+        {
+            color:rgb(148, 207, 58);
+            margin-left:25%;
+            margin-top: 12%;
+            float:left;
+        }
+        .maps p
+        {
+            color:lightslategray;
+            font-weight: 700;
+            float: left;
+            margin-top: 14%;
+            margin-left: 6%;
+        }
+        .btn
+        {
+            display:block;
+            width:15%;
+            float:left;
+            border: 3px solid rgb(148, 207, 58);
+            color:rgb(148, 207, 58);
+            background-color: white;
+            font-size:16px ;
+            padding: 10px;
+            margin: 2% 0%;
+            cursor:pointer;
+        } 
+        .header-page
+        {
+            height: 30%;
+            background-color: rgb(148, 207, 58);
+            margin-bottom: 0;
+        } 
+        .searchbar
+        {
+            display:block;
+            float: right;
+            color:white;
+            padding:20px 12px;
+            cursor: pointer;
+            height: 100%;
+            width: 10%;
+        }
+        .header-page-info
+        {
+            display:block;
+            color:white;
+            list-style: none;
+            margin: 0;
+            margin-left: 10%;
+            padding:0;
+            width:80%;
+            height: 100%;
+            float:left;
+        }
+        .header-page-info li
+        {
+            float:left;
+        }
+        .header-page-info li a
+        {
+            display: block;
+            font-size: 13px;
+            text-decoration: none;
+            color: floralwhite;
+            padding:20px 16px;
+            cursor:pointer;
+        }
+        .header-page-info li a:hover
+        {
+            background-color: wheat;
+            color:tomato;
+        }
+
+        .article
+        {
+            height: 75%;
+            background:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+            background-position: center;
+            background-repeat: no-repeat;
+             background-size: cover; 
+            opacity: 0.9;
+        }
+        .article-content
+        {
+            text-align: center;   
+            color:white;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-95%); 
+        }
+        .article-content h2
+        {
+            font-size:32px;
+            color:floralwhite;
+            font-weight: 700;
+            line-height: 1em;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        .btn1
+        {
+            display:inline-block;
+            width:30%;
+            height:40px;
+            border: 2px solid rgb(148, 207, 58);
+            color:white;
+            background-color:rgb(148, 207, 58);
+            font-size:14px ;
+            cursor:pointer;
+        }
+        .btn2
+        {
+            display:inline-block;
+            width:30%;
+            height:40px;
+            border: 2px solid rgb(148, 207, 58);
+            color:white;
+            border:3px solid white;
+            font-size:14px ;
+            cursor:pointer;
+            background:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80s");
+            opacity:0.7;
+        }
+        .section
+        {
+            height: 30%;
+           
+        }
+        .future-goal
+        {
+            height:35%;
+            width:80%;
+            position:absolute;
+            top:60%;
+            left:10%;
+            background-color: orchid;
+         }
+         .future-students
+         {
+             width:25%;
+             height: 120%;
+             float:left;
+             background-color:rgb(53, 53, 255);
+             margin-right: 0;
+             margin-left: 0;
+         }
+        
+         .future-students h3
+         {
+             margin-left: 10%;
+             margin-top:25%;
+            color: white;
+             text-align: center;
+         }
+         .future-students p
+         {
+            color: white;
+             text-align: justify;
+             font-size: 13px;
+             margin-left:45%; 
+                margin: -2% 10%;
+         }
+         .future-students-goals
+         {
+             width:25%;
+             height: 120%;
+             float:left;
+             background-color:rgb(201, 109, 124);
+         }
+         .span-goals
+         {
+            color:white;
+            margin-left:45%;
+            margin-top: 8%;
+            margin-bottom: 0;
+            float:left;
+           
+            /* padding-top: 50%; */
+         }
+         .future-students-goals h3
+         {
+            color: white;
+             text-align: center;
+             /* padding-top: 0%; */
+             margin-left: 5%;
+             margin-top:25%;
+         }
+         .future-students-goals p
+         {
+            color: white;
+            text-align: justify;
+            font-size: 13px;
+            margin: -2% 10%;
+         }
+         .courses
+         {
+             width:25%;
+             height: 120%;
+             float:left;
+             background-color:rgb(167, 238, 26);
+             margin-right: 0;
+             margin-left: 0;
+         }
+         .span-courses
+         {
+             color:white;
+             margin-left:45%; 
+             margin-top: 8%;
+            margin-bottom: 0;
+            float:left;
+         }
+         .courses h3
+         {
+             color: white;
+             text-align: center;
+             margin-left: 0%;
+             margin-top:25%;
+         }
+         .courses p
+         {
+             color: white;
+             text-align: justify;
+             font-size: 13px;
+             margin: -2% 10%;
+         }
+         .events
+         {
+             display: inline-block;
+             width:25%;
+             height: 120%;
+             background-color:rgb(250, 112, 62);
+             margin-right: 0;
+             margin-left: 0;
+         }
+         .span-events
+         {
+             color:white;
+             margin-left:45%; 
+             margin-top: 8%;
+            margin-bottom: 0;
+            float:left;
+         }
+         .events h3{
+             color: white;
+             text-align: center;
+             margin-left: 2%;
+             margin-top:25%;
+         }
+         .events p
+         {
+             color: white;
+             text-align: justify;
+             font-size: 13px;
+             margin: -2% 10%;
+         }
+         .span-students
+         {
+            color:white;
+            margin-left:42%;
+            margin-top: 8%;
+            margin-bottom: 0;
+            float:left;
+         }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <span class="navblank"></span>
+                <ul class="nav-info"> 
+                    <li><a href="#">FUTURE STUDENTS &nbsp;|</a></li>    
+                    <li><a href="#">OUR COMMUNITY</a></li>  
+                    <li><a href="#">|&nbsp;&nbsp;COURSES</a></li>  
+                    <li><a href="#">|&nbsp;&nbsp;EVENTS </a></li>
+                    <li><a href="#">|&nbsp;&nbsp;TEAM </a></li>
+                    <li><a href="#">|&nbsp;&nbsp;BLOG </a></li>
+                    <li><a href="#">|&nbsp;&nbsp;STYLE GUIDE</a></li>
+                    <li><a href="#">|&nbsp;&nbsp;TESTIMONIALS</a></li>
+                 </ul>
+                 <ul class="nav-tags">
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li> 
+                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                 </ul>   
+                </div>
+            <div class="header-content">
+                <div class="logo">
+                    <span class="span-logo"><i class="fa fa-graduation-cap fa-3x"></i></span>
+                    <h3>School Zone</h3>
+                    <p>Best Education Word Press Theme</p>  
+                </div>
+                <div class="phone">
+                    <span class="span-phone"><i class="fa fa-phone fa-2x"></i></span>
+                    <p>(888)123-45678<br>email@schoolzone</p>
+                </div>
+                <div class="maps">
+                    <span class="span-maps"><i class="fa fa-map-marker fa-2x"></i></span>
+                    <p>Kathmandu,Nepal</p>
+                </div>
+                <button class="btn">APPLY NOW</button>
+            </div>
+            <div class="header-page">
+                <ul class="header-page-info"> 
+                   <li><a href="#">HOME</a></li>    
+                   <li><a href="#">THEME</a></li>  
+                   <li><a href="#">INFO</a></li>  
+                   <li><a href="#">COURSES</a></li>
+                   <li><a href="#">TEAM EVENTS</a></li>
+                   <li><a href="#">TESTIMONALS</a></li>
+                   <li><a href="#">PAGE EXAMPLES</a></li>
+                   <li><a href="#">SHORT CODES</a></li>
+                   <li><a href="#">STYLE GUIDE</a></li>
+                   <li><a href="#">SHOP</a></li>
+                   </ul>
+                    <div class="searchbar">
+                   <i class="fa fa-search"></i>
+                   </div>
+            </div>
+        </div>
+
+        <div class=main>
+            <div class="article">
+                <div class="article-content">
+                    <h2>
+                        Better Education for a <br>Better World
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, maiores iure saepe eaque atque reprehenderit exercitationem quis.</p>
+                    <button class="btn1">GET STARTED NOW</button>
+                    <button class="btn2">GET STARTED NOW</button>
+                </div>
+            </div>
+
+            <div class="section">
+                
+            </div>
+            <div class="future-goal">
+                <div class="future-students">
+                    <span class="span-students"><i class="fa fa-graduation-cap fa-2x"></i></span>
+                    <h3>Future Students</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi aut itaque dignissimos explicabo, porro hic animi. </p>
+                </div>
+                <div class="future-students-goals">
+                    <span class="span-goals"><i class="fa fa-smile-o fa-2x"></i></span>
+                    <h3>Future Students</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis magni expedita, corrupti et suscipit nisi?.</p>
+                </div>
+                <div class="courses">
+                    <span class="span-courses"><i class="fa fa-sticky-note-o fa-2x"></i></span>
+                   
+                    <h3>Courses</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo voluptatum nesciunt laborum fugit qui neque?</p>
+                </div>
+                <div class="events">
+                    <span class="span-events"><i class="fa fa-calendar fa-2x"></i></span>
+                    <h3>Events</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque exercitationem alias nam beatae laborum aperiam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
