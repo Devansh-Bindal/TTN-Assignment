@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook-Login Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        body
+        {
+            margin: 0;
+            padding:0;
+        }
+        .header
+        {
+            height:83px;
+         background-color:#3b5a8ff6;
+        }
+        .nav-begin
+        {
+            display:block;
+            float:left;
+            width:58%;
+            /* background-image: url(/rsrc.php/v3/yR/r/ROPIpQzcJcq.png) no-repeat; */
+            height:auto;
+            color:white;
+            font-size: 46px;
+            font-weight: 700;
+            padding-left:11.8%;
+            padding-top: 1.7%;
+            font-family: 'Times New Roman', Times, serif;
+            cursor: pointer;
+            /* padding: 1.8% 11%; */
+        }
+        .nav-begin:hover
+        {
+            background-color:#3b5a8ff6;
+            color:lightgray;
+        }
+        .email
+        {
+            display:block;
+            float:left;
+            color:#fff;
+            text-align: left;
+            line-height: 22.34px;
+            width:13%;
+            font-size: 12px;
+            font-weight:550;
+            padding-top:15px;
+            padding-left:-2px;
+            font-family: inherit;
+            margin-left: 2px;
+            margin-top:-4px;
+        }
+        .email input
+        {
+            display:block;
+            float:left;
+            background-color:#fff;
+            color: #1c1e21;
+            border:1px solid #1d2a5b;
+            padding-bottom: 4px;
+            padding-left: 2px;
+            margin:0;
+        }
+        .password
+        {
+            display:block;
+            float:left;
+            color:#fff;
+            text-align: left;
+            line-height: 22.34px;
+            width:13%;
+            font-size: 12px;
+            font-weight:550;
+            padding-top:15px;
+            padding-left:-2px;
+            font-family: inherit;
+            margin-left: -4px;
+            margin-top:-4px;
+        }
+        .password text
+        {
+            display:block;
+            float:left;
+            background-color:#fff;
+            color: #1c1e21;
+            border:1px solid #1d2a5b;
+            padding-bottom: 4px;
+            padding-left: 5px;
+        }
+        .forgotten a
+        {
+            color: #9cb4d8;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12px;
+            padding-bottom: 10px;
+         }
+        .nav-end
+        {
+             display:block; 
+             float:left; 
+            font-family:Arial, Helvetica, sans-serif;
+            width:13%;
+            height: 85px;
+        }
+        .nav-end-button
+        {
+            background-color:#4267b2;
+            color: #fff;
+            border:0.5px solid #29487d;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top:20% ; 
+            padding-top:3%;
+            padding-right:4%;
+            padding-bottom: 2%;
+            padding-left: 4%;
+            margin-left:-5px;
+        }
+        .nav-end-button:hover
+        {
+            color:thistle;
+            background-color:darkblue ;      
+              }
+        .main
+        {
+            height:540px;
+            margin:0;
+            padding: -50px -50px;
+            background-color: #ebedf0;
+        }
+        .map
+        {
+            display:block;
+            float:left; 
+            width:52%;
+            height: 540px;
+             /* margin: 0 0;  */
+             margin-left:30px;
+          
+        }
+        .map-info
+        {
+            color: #0e385f;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 40px;
+            line-height: 29px;
+            word-spacing: -1px;
+            padding-left: 120px;
+            padding-right: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* text-align: center; */
+            
+        }
+        .map-image
+        {
+            width:100%;
+            height:40%;
+            float:right;
+            padding-left: 120px;
+            padding-right: 15px; 
+            padding-bottom: 25px;
+             /* padding-bottom:-20px ;  */
+        }
+        .form
+        {
+            display: block;
+            float:right;
+            /* margin:0 33.5%; */
+            height:auto;
+            width:45%;
+            padding-top: 20px;
+            padding-left: 10px;
+            /* margin-top: 10px; */
+            /* margin-right: -10px; */
+            /* padding-bottom: 10px; */
+            /* padding-right: 10px; */
+        }
+        .heading
+        {
+            font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+            font-weight: 600;
+             letter-spacing: normal;
+             color:#1D2129;
+             font-size: 40px;
+        }
+        .heading p
+        {
+            font-size: 22px;
+            font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            color:#4B4F56;
+        }
+        .first-name input
+        {
+            display:block; 
+            /* font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; */
+            width:40%;
+            float: left;
+            background-color: #fff;
+            border: 1px solid #ccd0d5;;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 8px 10px; 
+            margin-right: 15px;
+        }
+        .surname input
+        {
+            display:block; 
+            /* font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; */
+            width:40%;
+            float: left;
+            background-color: #fff;
+            border: 1px solid #ccd0d5;;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 8px 10px;
+        }
+        .mobile input
+        {
+             display:block;  
+            /* font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; */
+            width:83%; 
+            float: left;
+            background-color: t#fff;
+            border: 1px solid #ccd0d5;;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 8px 10px;
+            margin-top: 15px;
+        }
+        .passwd input
+        {
+            display:block;  
+            /* font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; */
+            width:83%; 
+            float: left;
+            background-color: #fff;
+            border: 1px solid #ccd0d5;;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 8px 10px;
+            margin-top: 15px;
+        }
+        .birthday 
+        {
+            margin-top: 15px;
+            display: block;
+            float: left;
+            width:100%;
+            height: auto;
+            color: #90949c;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .birth1 select
+        {
+            display: block;
+            float:left;
+            width:10%;
+            font-size: 13px;
+            height: 30px;
+            padding: 5px; 
+            background-color: #fff;
+            color: #1c1e21;
+            border: 1px solid #ccd0d5;
+            align-items: center;
+            margin: 0 0;
+        }
+        .birth2 select
+        {
+            display: block;
+            float:left;
+            width:15%;
+            font-size: 13px;
+            height: 30px;
+            padding: 5px;
+            background-color: #fff;
+            color: #1c1e21;
+            border: 1px solid #ccd0d5;
+            align-items: center;
+            margin:0 0;
+        }
+        .birth3 select
+        {
+            display: block;
+            float:left;
+            width:11.8%;
+            font-size: 13px;
+            height: 30px;
+            padding: 5px;
+            background-color: #fff;
+            color: #1c1e21;
+            border: 1px solid #ccd0d5;
+            align-items: center;
+            margin:0 0;
+        }
+        .birth4  
+        { 
+            display:block;
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            color:slategray;
+            cursor:pointer;
+            margin-top:7px ;
+        }
+        .gender
+        {
+            margin-top: 5px;
+            display: block;
+            float: left;
+            width:100%;
+            color: #90949c;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .gendermale
+        {
+            margin-top: 8px;
+            display: block;
+            float:left;
+            width:18%;
+            color:#1d2129;
+            /* margin-right:1px; */
+        }
+        .genderfemale
+        {
+            margin-top: 8px;
+            display: block;
+            float:left;
+            width:18%;
+            color:#1d2129;
+            /* margin-right:1px; */
+        }
+        .gendercustom
+        {
+            margin-top: 8px;
+            display: block;
+            float:left;
+            width:18%;
+            color:#1d2129;
+        }
+        .genderquestion
+        {
+
+            display:block;
+            float: left;
+            color:slategray;
+            cursor:pointer;
+            margin-left: 5px;
+            margin-top: 8px;
+        }
+        .footer
+        {
+            display:block;
+            float: left;
+            width:50%;
+            color:#777777;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+        .footer a 
+        {
+        text-decoration: none;
+        cursor:pointer;    
+        color:#385898;
+        }
+        .button
+        {
+            display: block;
+            float: left;
+            width:70%;
+            height:20%;
+            font-size: 19px;
+            font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+            font-weight: bold!important;
+             padding: 7px 20px;
+             background-color: #69a74e;
+             color: #fff;
+             box-shadow: 1px 1px #a4e388;
+             border: 1px solid #3b6e22;
+             border-radius: 5px;
+             padding:8px;
+        } 
+        .button:hover
+        {
+            background-color: darkgreen;
+            color:lime;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <span class="nav-begin">facebook</span>
+          <div class="email">Email or phone<br>
+            <input type="text" id="email" name="email" size="16" >
+        </div>
+        <div class="password">Password<br>
+            <input type="password" id="password" name="password" size="16" >
+            <span class="forgotten"><a href="#">Forgotten account?</a></span>
+        </div>
+        <div class="nav-end">
+          <button class="nav-end-button">Log In</button>
+          </div>
+    </div>
+
+        <div class="main">
+            <div class="map">
+                    <div class="map-info">Facebook helps you connect and share with the people in your life.</div>
+                    <span><img class="map-image" src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/OBaVg52wtTZ.png"></span>
+            </div>
+                    <div class="form">
+                        <span class="heading">Create an account<p>It's quick and easy</p></span>
+                            <div class="first-name">
+                                <input type="text" id="first-name" name="first-name" placeholder="First Name">
+                            </div>
+                            <div class="surname">
+                                <input type="text" id="surname" name="surname" placeholder="Surname" >
+                            </div>
+                            <div class="mobile">
+                                <input type="text" id="mobile" name="mobile" placeholder="Mobile number or email address" >
+                            </div>
+                            <div class="passwd">
+                                <input type="text" id="passwd" name="passwd" placeholder="New Password" >
+                            </div>
+                            <div class="birthday">
+                                <label for="birth">Birthday</label><br>
+                                <div class="birth1">
+                                    <select id="date">
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+                            <option value="five">5</option>
+                            <option value="six">6</option>
+                            <option value="seven">7</option>
+                            <option value="eight">8</option>
+                            <option value="nine">9</option>
+                            <option value="ten">10</option>
+                            <option value="eleven">11</option>
+                            <option value="twelve">12</option>
+                            <option value="thirteen">13</option>
+                            <option value="fourteen">14</option>
+                            <option value="fifteen">15</option>
+                            <option value="sixteen">16</option>
+                            <option value="seventeen">17</option>
+                            <option value="eighteen">18</option>
+                            <option value="nineteen">19</option>
+                            <option value="twenty">20</option>
+                            <option value="twenty one">21</option>
+                            <option value="twenty two">22</option>
+                            <option value="twenty three">23</option>
+                            <option value="twenty four">24</option>
+                            <option value="twenty five">25</option>
+                            <option value="twenty six">26</option>
+                            <option value="twenty seven">27</option>
+                            <option value="twenty eight">28</option>
+                            <option value="twenty nine">29</option>
+                            <option value="thirty">30</option>
+                            <option value="thirty one">31</option>
+                                    </select>
+                                </div>
+                                <div class="birth2">
+                                    <select id="month">
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="mar">March</option>
+                             <option value="april">April</option>
+                                <option value="may">May</option>
+                                <option value="jun">June</option>
+                                <option value="jul">July</option>
+                             <option value="aug">August</option>
+                             <option value="sep">September</option>
+                             <option value="oct">October</option>
+                             <option value="nov">November</option>
+                             <option value="dec">December</option>
+                                    </select>
+                                </div>
+                                <div class="birth3">
+                                    <select id="year">
+                        <option value="1">1995</option>
+                        <option value="2">1996</option>
+                        <option value="3">1997</option>
+                         <option value="4">1998</option>
+                         <option value="5">1999</option>
+                        <option value="6">2000</option>
+                        <option value="7">2001</option>
+                         <option value="8">2002</option>
+                         <option value="9">2003</option>
+                         <option value="10">2004</option>
+                                    </select>
+                                </div>
+                                <div class="birth4">
+                                <i class="fa fa-question-circle"></i>
+                                </div>
+                            </div>
+                            <div class="gender">Gender<br>
+                   <span class="genderfemale"> <input type="radio" id="male" value="male">Female</span>
+                   <span class="gendermale"> <input type="radio" id="female" value="female">Male</span>
+                    <span class="gendercustom"><input type="radio" id="custom" value="custom">Custom</span>
+                    <span class="genderquestion"><i class="fa fa-question-circle"></i></span>
+                            </div>
+                            <div class="footer" style="text-align: justify;">
+                            <p>By clicking Sign Up, you agree to our <a href=""> Terms, Data Policy</a> and 
+                            <a href="">Cookie Policy</a> . You may receive SMS notifications from us and can opt out at any time.</p>
+                            <button class="button">Sign Up</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+</html>
