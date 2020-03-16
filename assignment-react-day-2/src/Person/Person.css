@@ -1,0 +1,20 @@
+.Person-List
+{
+    display:flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    justify-content: center;
+    border:1px solid black;
+    border-radius: 5px;
+}
+.Person-List li{
+    list-style: none;
+    text-align: center;
+    margin:13px;
+}
+.Person-List button{
+    margin:10px;
+    padding:2px;
+    cursor: pointer;
+    border-radius: 2px;
+}
