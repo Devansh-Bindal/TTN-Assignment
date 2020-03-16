@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+*
+{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+body
+{
+    font-family: 'Muli', sans-serif ;
+    line-height: 1.6rem;
+}
+.navbar .logo .text-primary i{
+    cursor: pointer;
+}
+.navbar .logo .text-primary a{
+    text-decoration: none;
+    color:#93cb52; 
+}
+.navbar .logo a{
+    text-decoration: none;
+    color:white;
+}
+.navbar
+{
+    display:flex;
+    position:sticky;
+    top:0;
+    color:white;
+    background-color: black;
+    opacity: 0.8;
+    justify-content: space-between;
+    padding:20px;
+    z-index:1;
+}
+.navbar.text-primary 
+{
+    text-decoration:none;
+}
+.navbar ul
+{
+    list-style: none;
+    display:flex;
+    align-items: center;
+}
+.navbar ul li a
+{
+    text-decoration: none;
+    color:white;
+    padding:15px;
+    margin:0 2px;
+}
+.navbar ul li a:hover
+{
+    background-color:#7ab436;
+    color:white;
+}
+
+.showcase
+{
+    height:100vh;
+    text-align: center;
+    background: url("/home/devansh/Downloads/iii.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    padding-top: 20px;
+}
+.showcase-content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding:10px;
+    color:white;
+    background-color:rgba(0, 0,0,0.4);
+    position: absolute;
+    top:65px;
+    left:0;
+    right:0;
+    bottom:0;
+    height: 100%;
+}
+.l-heading
+{
+    font-size:65px;
+    margin-bottom: 45px;
+}
+.lead
+{
+    font-size:15px;
+    margin-bottom:10px;
+}
+.btn
+{
+    display: inline-block;
+    border:none;
+    background: #93cb52;
+    border-radius: 2px;
+    color:white;
+    padding:10px;
+    width:10vw;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.btn:hover
+{
+    background: #7ab436;
+    color:white;
+}
+
+.sectionOne.container
+{
+    max-width:1100px;
+    padding: 80px;
+}
+.sectionOne
+{
+    background: #f4f4f4;
+}
+.m-heading
+{
+    font-size:32px;
+    margin-top: 25px;
+    text-align: center;
+}
+.items
+{
+    display: flex;
+}
+.item
+{
+display:flex;
+align-items: center;
+flex-basis: 1;
+text-align:center;
+padding:20px;
+margin-bottom: 20px;
+}
+.items .item i
+{
+    background: #93cb52;
+    border-radius: 50%;
+    padding:15px;
+}
+.items .item-heading h3
+{
+    padding:5px 0;
+}
+.items p
+{
+    margin-top: 5px;
+}
+.who
+{
+    display:flex;
+}
+.who div
+{
+    flex:1;
+}
+.who-img
+{
+    background: url("/home/devansh/Downloads/ee.jpg") no-repeat center center/cover;
+    justify-content: space-around;
+}
+.who-text
+{
+    background: #333333;
+    padding-top: 20px;
+    padding-left:30px;
+    color:white;
+}
+.who-text p
+{
+    font-size: 16px;
+    line-height: 1.3rem;
+}
+.who-text h2
+{
+    padding:10px 0;
+    text-align: left;
+}
+.who-text h3
+{
+    margin-top: 15px;
+}
+.list-items 
+{
+    padding-top: 10px;
+}
+.list-items li
+{
+    list-style: none;
+    padding: 10px 0;
+    border-bottom:1px dotted darkgrey;
+}
+.section-part
+{
+    background-color: white;
+}
+.section-part .container 
+{
+    margin-top:20px;
+}
+.m-heading .items
+{
+    display: flex;
+}
+.items .logos{
+    margin:auto;
+    padding:15px;
+}
+.items .logos img{
+    width: 150px;
+    height: 150px;
+}
+
+.container-form
+{
+    display:flex;
+    flex-direction: row;
+}
+.form
+{
+    flex: 1;
+    background-color:#93cb52;
+    padding:40px 30px ;
+    color:white;
+
+}
+input,textarea{
+    width: 80%; 
+    padding: 6px;
+    color:lightgray
+}
+.send
+{
+    border:none;
+    background-color: rgb(31, 28, 28);
+    width:85%;
+    height:10%;
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    margin-top: 10px;
+    padding:10px
+}
+.send:hover{
+    background-color:#84ce31 ;
+}
+.form-info
+{
+    padding:5px;
+}
+.google
+{
+    flex: 2;
+    background: url('/home/devansh/download.jpeg') no-repeat center center/cover;
+}
+.footer
+{
+    width:100%;
+    color:white;
+    background-color: rgba(19, 18, 18, 0.685);
+    text-align: center;
+    padding:30px;
+}
+@media screen and (max-width:1024px)
+{
+    .items .item i
+    {
+        display: flex;
+        text-align: left;
+    }
+}
