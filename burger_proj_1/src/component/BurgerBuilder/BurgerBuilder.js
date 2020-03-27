@@ -5,11 +5,11 @@ import BuildControls from '../../component/Burger/BuildControls/BuildControls';
 class BurgerBuilder extends Component
 {   state={
         ingredients:{
-            salad:0,
-            bacon:0,
-            meet:0,
-            cheese:0
-        }}
+            salad:1,
+            bacon:1,
+            meat:2,
+            cheese:2
+         }}
     render(){
         return(
             <Fragment>

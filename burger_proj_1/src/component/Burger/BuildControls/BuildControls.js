@@ -1,6 +1,6 @@
 import React from 'react';
-import BuildControl from './BuildControl/BuilControl';
-import classes from './BuildControl/BuildControl.module.css';
+import BuildControl from './BuildControl/BuildControl';
+import  './BuildControl/BuildControl.module.css';
 const controls=[
     {label:'salad' ,type:'salad'},
     {label:'meat' ,type:'meat'},
@@ -8,7 +8,7 @@ const controls=[
     {label:'cheese' ,type:'cheese'}
 ]
 const BuildControls=()=>(
-    <div className={classes.BuildControls}>
+    <div className="BuildControls">
       {controls.map(ctrl=>(
           <BuildControl key={ctrl.label} label={ctrl.label}/>
       ))}

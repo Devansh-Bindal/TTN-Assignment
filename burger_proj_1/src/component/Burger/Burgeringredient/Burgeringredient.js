@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classes from './Burgeringredient.module.css';
+import './Burgeringredient.module.css';
 
 class BurgerIngredient extends Component {
     render () {
@@ -8,38 +8,33 @@ class BurgerIngredient extends Component {
         
         switch ( this.props.type ) {
             case ( 'bread-bottom' ):{
-                ingredient = <div className={classes.BreadBottom}>jdvj</div>;
+                ingredient= <div className="BreadBottom"></div>;
             }
                 break;
             case ( 'bread-top' ): {
-                ingredient = (
-                    <div className={classes.BreadTop}>
-                        bread-top
-                        <div className={classes.Seeds1}>seeds1</div>
-                        <div className={classes.Seeds2}>seeds2</div>
+                ingredient= (
+                    <div className="BreadTop">
+                        <div className="Seeds1"></div>
+                        <div className="Seeds2"></div>
                     </div>
                 );
             }
-               
-                break;
+               break;
             case ( 'meat' ):
-                ingredient = <div className={classes.Meat}>meat</div>;
+                ingredient = <div className="Meat"></div>;
                 break;
             case ( 'cheese' ):{
-                ingredient = <div className={classes.Cheese}>cheese</div>;
+                ingredient = <div className="Cheese"></div>;
             }
-              
-                break;
+               break;
             case ( 'bacon' ):{
-                ingredient = <div className={classes.Bacon}>bacon</div>;
+                ingredient = <div className="Bacon"></div>;
             }
-              
-                break;
+              break;
             case ( 'salad' ):{
-                ingredient = <div className={classes.Salad}>salad</div>;
+                ingredient = <div className="Salad"></div>;
             }
-               
-                break;
+               break;
             default:
                 ingredient = null;
         }
