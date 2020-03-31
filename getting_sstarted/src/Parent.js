@@ -4,10 +4,12 @@ class Parent extends Component{
     state={
             x:2
     }
-  
     render(){
         return(
-            <Child x={this.state.x} updateX={this.setState}/>
+            <div>
+            Value of x is : {this.state.x}
+            <Child x={this.state.x} updateX={(obj) => {this.setState(obj);}}/>
+            </div>
         );
     }
 }
