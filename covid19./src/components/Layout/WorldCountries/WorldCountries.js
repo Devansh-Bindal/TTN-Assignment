@@ -1,25 +1,21 @@
-import React,{Fragment} from 'react';
+import React, { Fragment } from 'react';
 import WorldCountry from '../WorldCountry/WorldCountry';
-const worldCountries=(props)=>
-{
-    let countries=props.countries;
-    if(countries)
-    {
-        countries.map(countryInfo=>
-            {
-                return (
-                    <Fragment>
-                {/* <div>hi</div> */}
+const worldCountries = (props) => {
+    let countries = props.countries;
+    if (countries) {
+        countries = countries.map(countryInfo => {
+            return (
                 <WorldCountry
-                flag={countryInfo.flag}
-                countries={countryInfo.country}
-                totalCases={countryInfo.totalCases}
-                recovered={countryInfo.recovered}
+                    key={countryInfo.country}
+                    flag={countryInfo.flag}
+                    countries={countryInfo.country}
+                    totalCases={countryInfo.total_cases}
+                    recovered={countryInfo.total_recovered}
                 />
-                // </Fragment>
-                )
-            })
+            )
+        })
     }
-    // return countriesResult;
+
+    return countries;
 }
 export default worldCountries;

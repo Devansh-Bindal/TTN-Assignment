@@ -2,31 +2,27 @@ import React from 'react';
 import './WorldCountry.css';
 import Up from '../../../images/Up.svg';
 import Down from '../../../images/Down.svg';
-const WorldCountry =(props)=>
-{
-    let arrow=Up;
-    let activeCase=props.totalCases-props.recovered;
-    if(activeCase<props.recovered)
-    {
-            arrow=Down;
+const WorldCountry = (props) => {
+    let arrow = Up;
+    let activeCase = props.totalCases - props.recovered;
+    if (activeCase < props.recovered) {
+        arrow = Down;
     }
-    let TotalCases=props.totalCases;
-    if(TotalCases>=1000)
-    {
-        TotalCases =`${props.totalCases.toFixed(3)}k`;
+    let TotalCases = props.totalCases;
+    if (TotalCases >= 1000) {
+        TotalCases = `${props.totalCases.toFixed(3)}k`;
     }
-    let Recover=props.recovered
-    if(Recover>1000)
-    {
-        Recover=`${props.Recover.toFixed(3)}k`;
+    let Recover = props.recovered
+    if (Recover > 1000) {
+        Recover = `${props.Recover.toFixed(3)}k`;
     }
-    return(
+    return (
         <div className="box">
-        <img src={props.flag}  alt="" style={{ width: "10%", height: "30%", position: "absolute", top: "20%", left: "3%" }} />
-        <div className="countryName">{props.countries}</div>
-        <div className="affected">{TotalCases} Affected | {Recover} Recovered</div>
-        <img src={arrow}  alt="" width="8%" style={{ position: "absolute", top: "45%", left: "85%" }} />
-    </div>
+            <img src={props.flag} alt="" style={{ width: "10%", height: "30%", position: "absolute", top: "20%", left: "3%" }} />
+            <div className="countryName">{props.countries}</div>
+            <div className="affected">{TotalCases} Affected | {Recover} Recovered</div>
+            <img src={arrow} alt="" width="8%" style={{ position: "absolute", top: "45%", left: "85%" }} />
+        </div>
     )
 }
 export default WorldCountry;
