@@ -1,0 +1,393 @@
+  .Header
+{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* background-color: red; */
+    /* width:70%; */
+}
+/* .ssd
+{
+    color:red;
+} */
+.Layout
+{
+    width:5%;
+    margin-top:1%;
+    margin-left: 1%;
+}
+.Heading
+{
+    color:rgb(235, 30, 30);
+    margin:1% 0;
+}
+.container{
+/* background-color: violet; */
+/* display: flex; */
+position: relative;
+background-color: lightgray;
+    height:fit-content;
+}
+.main
+{
+    width:75%;
+    background-color: lightgray;
+  
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+}
+.img1,.img2,.img3,.img4
+{
+    position: relative;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.totalCase
+{
+    position: absolute;
+    font-size: larger;
+    top:28%;
+    left:15%;
+    width:100%;
+    color:rgba(0, 0, 0, 0.712);
+}
+.count
+{
+    position: absolute;
+    top:50%;
+    left:15%;
+    font-weight: bold;
+    font-size: x-large;
+}
+.section
+{
+    background-color: lightgray;
+    width:75%;
+    height:412px;
+    display: flex;
+}
+.LeftSection
+{
+    width:35%;
+    height:100%;
+    background-color: white;
+    margin-left: 1.5rem;
+    /* background-color: rgb(161, 161, 132); */
+    /* margin:0 10%; */
+    border:1px solid white;
+    border-radius: 5px;
+    overflow: scroll;
+}
+.search-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 90%;
+    margin:auto;
+    margin-top: 3%;
+    /* margin-bottom: 15px; */
+  }
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 1rem;
+  }
+  
+  .input-field:focus {
+    border: 2px solid dodgerblue;
+  } 
+.box
+{
+    /* box-sizing: border-box;*/
+    position: relative;
+    margin-left: 10%;
+     width:88%; 
+    height:16%;
+    margin:2% auto;
+    border:1px solid white;
+    background-color: rgba(160, 158, 158, 0.116);
+    border-radius: 1rem;
+    box-shadow: 5px 0px 1px white;
+}
+.countryName
+{
+    position:absolute;
+    top:25%;
+    left:16%;
+    color:black;
+    font-weight: bold;
+    font-size: 14px;
+}
+.affected
+{
+    color:rgba(0, 0, 0, 0.712);
+    font-size:10px;
+    position: absolute;
+    top:68%;
+    left:3%;
+}
+.Right-Section
+{
+    /* background-color: teal; */
+    background-color: white;
+    width:57.5%;
+    /* height: fit-content; */
+    height:415px;
+    border-radius: 1rem;
+    margin-left:2%;
+}
+.Map-Section
+{
+    background-color: yellow;
+    border-radius: 1rem;
+    margin:5% 5%;
+    height:90%;
+}
+.article
+{
+    width:75%;
+    height: fit-content;
+    display: flex;
+    background-color: lightgray;
+}
+.article-left
+{
+background-color: white;
+width:45%;
+/* height: 100%; */
+height:205px;
+margin:1.5rem 1.5rem;
+border-radius: 1rem;
+}
+.article-right
+{
+background-color: white;
+width:45%;
+height: fit-content;
+margin:1.5rem 1.7rem;
+/* margin-top: 1.5rem;
+margin-right: 1.7rem; */
+border-radius: 1rem;
+display:flex;
+}
+.article-right-img
+{
+    /* border:1px solid black; */
+    width:30%;
+    text-align: center;
+}
+.article-right-box
+{
+    /* border:1px solid green; */
+    text-align: center;
+    margin:2rem 2rem;
+}
+.top
+{
+height:30%;
+}
+.btnNews
+{
+    background-color: pink;
+    color: red;
+    font-weight: bold;
+    padding:0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-left:1.5rem;
+    margin-top: 1rem;
+}
+.between
+{
+    height:30%;
+    margin-left:1.5rem;
+    font-weight: bold;
+    font-size: large;
+}
+.down
+{
+    height:15%;
+}
+.down-para
+{
+    color:red;
+    margin:0.2rem 1.5rem;
+}
+.down-para:after {
+    content: ' \21FE';
+    margin-left:0.5rem;
+    font-size: 22px;
+}
+.dots
+{
+    height: 17%;
+    padding:2%;
+    margin-left: 5.2rem;
+    display: flex;
+}
+.white-dot
+{
+    background-color: lightgrey;
+    border:1px solid transparent;
+    border-radius: 1.5rem;
+    width:5%;
+    height:30%;
+    margin-right: 0.8rem;
+    margin-top:0.3rem;
+}
+.red-dot
+{
+    background-color: rgb(207, 44, 44);
+    border:1px solid transparent;
+    border-radius: 1.5rem;
+    width:8%;
+    height:50%;
+    margin-right: 0.8rem;
+}
+
+.aside
+{
+    /* background-color: yellow; */
+    background-color: lightgray;
+    width:25%;
+    height: fit-content;
+    position: absolute;
+    left:75%;
+    top:0;
+}
+
+.Recovery-ratio
+{
+    background-color: white;
+    width:90%;
+    border:1px solid transparent;
+    border-radius: 1rem;
+    height:240px;
+    margin:1.5rem 1rem;
+}
+.twitter
+{
+    background-color: white;
+    border-radius: 1rem;
+    /* margin:1.5rem 1rem; */
+    margin:5% 5%;
+    height:fit-content;
+}
+.twitter-top
+{
+    display: flex;
+}
+
+.twitter-heading
+{
+    color:rgba(0, 0, 0, 0.685);
+    /* margin-top: 30px; */
+    /* margin-left: 4%; */
+    font-weight: bold;
+    font-size: 20px;
+    padding:4%;
+    width:52%;
+    /* background-color: red; */
+}
+.twitter-img
+{
+    width:10%;
+    margin:6% -8%;
+}
+.twitter-info
+{
+    /* background-color: white; */
+    margin:0 4%;
+    display: flex;
+}
+.twitter-info-img
+{
+    width:25%;
+    /* background-color: red; */
+}
+.twitter-info-img-left
+{
+    width:90%;
+    height:80%;
+    margin:4% 8%;
+    border-radius: 2rem;
+}
+.twitter-info-right
+{
+    width:75%;
+    margin-top: 3%;
+    margin-left:2%;
+    /* background-color: yellow; */
+    /* margin:1%; */
+    /* padding:2%; */
+}
+.LogoName
+{
+    font-size: 16px;
+    margin-top: 2%;
+}
+.Logo-Subscript
+{
+    color:gray;
+    margin-top:3%;
+}
+.twitter-para
+{
+    font-size: 12px;
+    color:rgba(0, 0, 0, 0.781);
+    padding: 0 4%;
+    line-height: 1rem;
+}
+.twitter-footer
+{
+    display: flex;
+    padding: 0 4%;
+    margin-bottom: 2px solid lightgray;
+}
+.twitter-footer-like
+{
+    /* margin-top: 2%; */
+    margin-bottom: 4%;
+}
+.likes
+{
+    color:rgb(170, 60, 60);
+    margin-left: 3%;
+    margin-top: 4%;
+}
+.twitter-footer-share
+{
+    margin-left: 8%;
+    margin-bottom: 4%;
+}
+.shares
+{
+    color: rgb(135, 192, 206);
+    margin-left: 3%;
+    margin-top:4%;
+}
+.date
+{
+    color:gray;
+    margin-left:38%;
+    margin-top:4%;
+}
+.twitter-footer-like-modi
+{
+    /* margin-top: 2%; */
+    margin-bottom: 4%;
+}
+.twitter-footer-share-modi
+{
+    margin-left: 8%;
+    margin-bottom: 4%;
+}
+.date-modi
+{
+    color:gray;
+    margin-left:35%;
+    margin-top:4%;
+}  
