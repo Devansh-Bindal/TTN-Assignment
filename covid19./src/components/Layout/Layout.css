@@ -299,7 +299,7 @@ height:30%;
 }
 .twitter-info
 {
-    /* background-color: white; */
+    /* background-color: lime; */
     margin:0 4%;
     display: flex;
 }
@@ -345,7 +345,7 @@ height:30%;
 {
     display: flex;
     padding: 0 4%;
-    margin-bottom: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
 }
 .twitter-footer-like
 {

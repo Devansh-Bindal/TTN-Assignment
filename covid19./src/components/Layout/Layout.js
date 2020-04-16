@@ -8,11 +8,6 @@ import Graph1 from '../../images/Graph(1).svg';
 import Graph2 from '../../images/Graph (2).svg';
 import Graph3 from '../../images/Graph (3).svg';
 import Down from '../../images/Down.svg';
-// import US from '../../images/US.jpg';
-// import Italy from '../../images/Italy.png';
-// import China from '../../images/China.png';
-// import Germany from '../../images/Germany.png';
-// import Russia from '../../images/Russia.png';
 import Fever from '../../images/fever.svg';
 import Twitter from '../../images/Twitter.svg';
 import WHO from '../../images/WHO.png';
@@ -23,18 +18,15 @@ import share from '../../images/share.svg';
 import WorldCountries from '../Layout/WorldCountries/WorldCountries';
 import NavigationItems from '../Layout/NavigationItems/NavigationItems';
 class Layout extends Component {
-    // async componentDidMount()
-    // {
-    //     const response =await fetch("https://api.covid19api.com/summary");
-    //     console.log("hi"+Object.keys(response).join(''));
-    // }
     state = {
         totalCases: '',
         recovered: '',
         active: '',
         deaths: '',
-        flag: '',
-        countries: ''
+        flag:'',
+        countries:'',
+        country:''
+        // searching:'',   
     }
     async componentDidMount() {
         const response = await fetch("https://corona.lmao.ninja/all");
@@ -48,16 +40,33 @@ class Layout extends Component {
         const Country = await fetch("https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search");
         const dataCountry = await Country.json();
         const countries = dataCountry.data.rows;
-        const flag = JSON.stringify(dataCountry.data.rows[1].flag);
-        this.setState({ countries: countries, flag: flag });
-        // console.log(JSON.stringify(dataCountry.data.rows[0]));
+        const flag = JSON.stringify(dataCountry.data.rows.flag);
+        for(let i in countries)
+        {
+            let country=countries[i].country;
+            // console.log("country="+country);
+            this.setState({ countries: countries,flag:flag,country:country});}
+
         // setTimeout(function abc() {
         //     location.reload();
-        //         }, 60000);
+        //         }, 30000);
 
     }
 
+    searchHandler=(event)=>{
+            this.setState({searching: event.target.value})
+    }
+
     render() {
+        console.log("dbfhdv ",this.state);
+        // const searchList={...this.state.country}
+    // .filter(search=>{if(this.state.countries===search.includes(this.state.countries))return <li>{search}</li> 
+    //         else 
+    //          return <li>No Match Found</li>
+    //     })
+        // .filter( search =>this.state.country===search.includes(this.state.country))
+        // .map((search, i) => <li key={i}>{search}</li>);
+        // console.log("list="+searchList);
         return (
             <Fragment>
 
@@ -100,17 +109,23 @@ class Layout extends Component {
                             <div className="LeftSection">
 
                                 <div className="search-container">
-                                    <input className="input-field" type="text" placeholder="Search Location" />
+                                    <input className="input-field" 
+                                     value={this.state.country}
+                                      type="text"
+                                      placeholder="Search Location" 
+                                    onChange={this.searchHandler.bind(this)}
+                                     />
                                 </div>
                                 < WorldCountries
-                                    countries={this.state.countries}
+                                    countries={this.state.country}
                                 />
+                                </div>
                                 <div className="Right-Section">
                                     <div className="Map-Section">
                                         Map
                                  </div>
                                 </div>
-                            </div>
+                                </div>
 
                             <div className="article">
                                 <div className="article-left">
@@ -141,7 +156,6 @@ class Layout extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         <div className="aside">
                             <div className="Recovery-ratio">Recovery Ratio Chart</div>
                             <div className="twitter">
