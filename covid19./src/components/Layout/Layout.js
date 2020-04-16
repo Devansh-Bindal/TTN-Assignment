@@ -23,10 +23,10 @@ class Layout extends Component {
         recovered: '',
         active: '',
         deaths: '',
-        flag:'',
-        countries:'',
-        country:''
-        // searching:'',   
+        flag: '',
+        countries: '',
+        filteredCountries: [],
+        searchedText: ''
     }
     async componentDidMount() {
         const response = await fetch("https://corona.lmao.ninja/all");
@@ -41,32 +41,17 @@ class Layout extends Component {
         const dataCountry = await Country.json();
         const countries = dataCountry.data.rows;
         const flag = JSON.stringify(dataCountry.data.rows.flag);
-        for(let i in countries)
-        {
-            let country=countries[i].country;
-            // console.log("country="+country);
-            this.setState({ countries: countries,flag:flag,country:country});}
-
-        // setTimeout(function abc() {
-        //     location.reload();
-        //         }, 30000);
-
+        this.setState({ countries: countries, flag: flag });
     }
 
-    searchHandler=(event)=>{
-            this.setState({searching: event.target.value})
+    searchHandler = (event) => {
+        const searchedText = event.target.value;
+        const filteredCountries = this.state.countries.filter(x => x.country.toLowerCase().indexOf(searchedText) > -1)
+        this.setState({ searchedText, filteredCountries });
     }
 
     render() {
-        console.log("dbfhdv ",this.state);
-        // const searchList={...this.state.country}
-    // .filter(search=>{if(this.state.countries===search.includes(this.state.countries))return <li>{search}</li> 
-    //         else 
-    //          return <li>No Match Found</li>
-    //     })
-        // .filter( search =>this.state.country===search.includes(this.state.country))
-        // .map((search, i) => <li key={i}>{search}</li>);
-        // console.log("list="+searchList);
+        const countriesData = this.state.filteredCountries.length ? this.state.filteredCountries : this.state.countries;
         return (
             <Fragment>
 
@@ -109,53 +94,53 @@ class Layout extends Component {
                             <div className="LeftSection">
 
                                 <div className="search-container">
-                                    <input className="input-field" 
-                                     value={this.state.country}
-                                      type="text"
-                                      placeholder="Search Location" 
-                                    onChange={this.searchHandler.bind(this)}
-                                     />
+                                    <input className="input-field"
+                                        value={this.state.country}
+                                        type="text"
+                                        placeholder="Search Location"
+                                        onChange={this.searchHandler.bind(this)}
+                                    />
                                 </div>
                                 < WorldCountries
-                                    countries={this.state.country}
+                                    countries={countriesData}
                                 />
-                                </div>
-                                <div className="Right-Section">
-                                    <div className="Map-Section">
-                                        Map
+                            </div>
+                            <div className="Right-Section">
+                                <div className="Map-Section">
+                                    Map
                                  </div>
-                                </div>
-                                </div>
-
-                            <div className="article">
-                                <div className="article-left">
-                                    Spread Trends
+                            </div>
                         </div>
-                                <div className="article-right">
-                                    <div className="article-right-img">
-                                        <div className="article-right-box">
-                                            <img src={Fever} alt="" style={{ height: "80%", width: "" }} />
-                                        </div>
-                                    </div>
-                                    <div className="article-right-feed">
-                                        <div className="top">
-                                            <button className="btnNews">News & Updates</button>
-                                        </div>
-                                        <div className="between">
-                                            <p>5 Symptoms of Corona Virus that you should know </p>
-                                        </div>
-                                        <div className="down">
-                                            <p className="down-para">Read More</p>
 
-                                        </div>
-                                        <div className="dots">
-                                            <div className="white-dot"></div>
-                                            <div className="red-dot"></div>
-                                            <div className="white-dot"></div>
-                                        </div>
+                        <div className="article">
+                            <div className="article-left">
+                                Spread Trends
+                        </div>
+                            <div className="article-right">
+                                <div className="article-right-img">
+                                    <div className="article-right-box">
+                                        <img src={Fever} alt="" style={{ height: "80%", width: "" }} />
+                                    </div>
+                                </div>
+                                <div className="article-right-feed">
+                                    <div className="top">
+                                        <button className="btnNews">News & Updates</button>
+                                    </div>
+                                    <div className="between">
+                                        <p>5 Symptoms of Corona Virus that you should know </p>
+                                    </div>
+                                    <div className="down">
+                                        <p className="down-para">Read More</p>
+
+                                    </div>
+                                    <div className="dots">
+                                        <div className="white-dot"></div>
+                                        <div className="red-dot"></div>
+                                        <div className="white-dot"></div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         <div className="aside">
                             <div className="Recovery-ratio">Recovery Ratio Chart</div>
                             <div className="twitter">
